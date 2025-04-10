@@ -31,16 +31,28 @@
   </head>
   <body>
     <div class="container wrapper text-center">
-      <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+      <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
       <form id="client-data">
         <div class="row g-4 m-5">
+          <div
+            class="alert alert-danger col-12 d-none"
+            role="alert"
+            id="wrong-form"
+          >
+            Dati sbagliati, riprova
+          </div>
           <div class="col-4">
             <label for="name">Nome e Cognome</label>
-            <input type="text" name="name" id="name-surname" />
+            <input
+              type="text"
+              name="name"
+              id="name-surname"
+              value="Brady Shehu"
+            />
           </div>
           <div class="col-4">
             <label for="distance">KM da percorrere</label>
-            <input type="text" name="distance" id="distance" />
+            <input type="text" name="distance" id="distance" value="30" />
           </div>
           <div class="col-4">
             <label for="age">Etá</label>
@@ -50,11 +62,44 @@
               <option value="over-65">Over 65</option>
             </select>
           </div>
+          <div>
+            <button id="generate">Genera</button>
+            <button id="cancel">Annulla</button>
+          </div>
         </div>
-        <div class="text-center"></div>
       </form>
-      <button id="generate">Genera</button>
-      <button id="cancel">Annulla</button>
+      <div id="ticket" class="d-none">
+        <h2>IL TUO BIGLIETTO</h2>
+        <div class="row g-0 m-5 text-start">
+          <h3>DETTAGLIO PASSEGGERI</h3>
+          <div class="col-3">
+            <div id="passenger-info" class="bg-secondary p-2">
+              <h3>NOME PASSEGGERO</h3>
+              <h5 id="ticket-name"></h5>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="row m-0">
+              <div class="col-3 bg-warning">
+                <h5>Offerta</h5>
+                <p class="mt-5" id="ticket-type">vnsjbn</p>
+              </div>
+              <div class="col-3 bg-warning">
+                <h5>Carrozza</h5>
+                <p class="mt-5">5</p>
+              </div>
+              <div class="col-3 bg-warning">
+                <h5>Codice CP</h5>
+                <p class="mt-5">1652566</p>
+              </div>
+              <div class="col-3 bg-warning"">
+                <h5>Costo biglietto</h5>
+                <p class="mt-5"  id="ticket-price">vnsjbn</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
